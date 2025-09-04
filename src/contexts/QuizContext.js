@@ -111,30 +111,6 @@ function QuizProvider({ children }) {
     getQuestions();
   }, []);
 
-  function startQuiz() {
-    dispatch({type: "startQuiz"})
-  }
-
-  function setAnswer(answerIndex) {
-    dispatch({ type: "setAnswer", payload: answerIndex })
-  }
-
-  function setTimer() {
-    dispatch({ type: "setTimer" });
-  }
-
-  function getNextQuestion() {
-    dispatch({type: "getNextQuestion"})
-  }
-
-  function finishQuiz() {
-    dispatch({type: "finishQuiz"})
-  }
-
-  function restartQuiz() {
-    dispatch({type: "restartQuiz"})
-  }
-
   const quizContextValue = {
     questions,
     status,
@@ -145,12 +121,7 @@ function QuizProvider({ children }) {
     timeRemaining,
     totalPoints,
     currentQuestion,
-    startQuiz,
-    setAnswer,
-    setTimer,
-    getNextQuestion,
-    finishQuiz,
-    restartQuiz,
+    dispatch,
   };
 
   return (

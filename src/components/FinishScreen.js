@@ -1,7 +1,7 @@
 import { useQuiz } from "../contexts/QuizContext";
 
 function FinishScreen() {
-  const { points, totalPoints, highScore, restartQuiz} = useQuiz()
+  const { points, totalPoints, highScore, dispatch } = useQuiz();
   const percentages = (points / totalPoints) * 100;
   return (
     <>
@@ -12,7 +12,7 @@ function FinishScreen() {
       <p className="highscore">(High score: {highScore} points)</p>
       <button
         className="btn btn-ui"
-        onClick={() => restartQuiz()}
+        onClick={() => dispatch({ type: "restartQuiz" })}
       >
         Restart Quiz
       </button>

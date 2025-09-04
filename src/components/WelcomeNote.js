@@ -1,10 +1,10 @@
 import { useQuiz } from "../contexts/QuizContext";
 
 function WelcomeNote() {
-  const { questions, startQuiz } = useQuiz();
+  const { questions, dispatch } = useQuiz();
 
   function handleStartQuiz() {
-    startQuiz();
+    dispatch({type: "startQuiz"});
   }
 
   return (
