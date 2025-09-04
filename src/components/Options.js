@@ -1,4 +1,9 @@
-function Options({ question, dispatch, answer, hasAnswer }) {
+import { useQuiz } from "../contexts/QuizContext";
+
+function Options({ question }) {
+  const {setAnswer, answer} = useQuiz();
+  const hasAnswer = answer !== null;
+
   return (
     <div className="options">
       {question.options.map((option, index) => (
@@ -11,7 +16,7 @@ function Options({ question, dispatch, answer, hasAnswer }) {
               : ""
           } ${answer === index ? "answer" : ""}`}
           key={option}
-          onClick={() => dispatch({ type: "setAnswer", payload: index })}
+          onClick={() => setAnswer(index)}
           disabled={hasAnswer}
         >
           {option}
