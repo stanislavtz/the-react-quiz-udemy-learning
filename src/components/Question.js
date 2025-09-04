@@ -3,7 +3,7 @@ import Options from "./Options";
 
 function Question() {
   const { currentQuestion } = useQuiz();
-  console.log(currentQuestion)
+  
   return (
     <div>
       <h4>{currentQuestion.question}</h4>
